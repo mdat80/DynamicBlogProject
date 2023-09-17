@@ -1,0 +1,128 @@
+﻿@model IEnumerable<BaseMusaBlog.EntityLayer.Concrete.Category>
+@{
+    ViewBag.Title = "AdminCategoryList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{ 
+    string color = "";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Kategoriler</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <section class="content">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Aktif Kategoriler</h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">
+                                Kategori
+                            </th>
+                            <th style="width: 30%">
+                                Açıklama
+                            </th>
+                            <th style="width: 8%" class="text-center">
+                                Durum
+                            </th>
+                            <th style="width: 20%">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            //Kategori başlıklarının arka plan renkleri
+                            if (item.CategoryStatus == true)
+                            {
+                                color = "post-category text-white bg-success mb-3";
+                            }
+                            if (item.CategoryStatus == false)
+                            {
+                                color = "post-category text-white bg-danger mb-3";
+                            }
+                        <tr>
+                            <td>@item.CategoryName</td>
+                            <td>
+                                @item.CategoryDescription
+                            </td>
+                            <td class="project-state">
+                                <span class="badge @color">@item.CategoryStatus</span>
+                            </td>
+                            <td class="project-actions text-right">
+                                <a class="btn btn-primary btn-sm" href="/Blog/BlogByCategory/@item.CategoryID">
+                                    <i class="fas fa-blog">
+                                    </i>
+                                    Bloglar
+                                </a>
+                                <a class="btn btn-info btn-sm" href="/Category/AdminCategoryEdit/@item.CategoryID">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Düzenle
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="/Category/AdminCategoryDelete/@item.CategoryID">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Pasif Yap
+                                </a>
+                                <a class="btn btn-success btn-sm" href="/Category/AdminCategoryActive/@item.CategoryID">
+                                    <i class="fas fa-plus">
+                                    </i>
+                                    Aktif Yap
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        @*popap *@
+        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#Modal1">Yeni Kategori</button>
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 style="color:darkred" class="modal-title">Yeni Kategori</h2>
+                    </div>
+                    <form method="post" action="/Category/AdminCategoryAdd/">
+                        <div class="modal-body">
+                            <label style="color:darkblue">Kategori Adı</label>
+                            <input type="text" name="CategoryName" class="form-control" />
+                            <br />
+                            <label style="color:darkblue">Kategori Açıklaması</label>
+                            <input type="text" name="CategoryDescription" class="form-control" />
+                            <br />
+                            <br />
+                            <button class="btn btn-info btn-sm">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

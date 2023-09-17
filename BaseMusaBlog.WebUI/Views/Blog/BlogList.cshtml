@@ -1,0 +1,94 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IEnumerable<BaseMusaBlog.EntityLayer.Concrete.Blog>
+@{
+    string color = "";
+}
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 style="font-family: 'Pacifico', cursive; font-style: italic; font-weight: bold; color:darkred">Bloglar</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                //Kategori başlıklarının arka plan renkleri
+                if (item.Category.CategoryName == "C#")
+                {
+                    color = "post-category text-white bg-success mb-3";
+                }
+                if (item.Category.CategoryName == "JAVASCRIPT")
+                {
+                    color = "post-category text-white bg-warning mb-3";
+                }
+                if (item.Category.CategoryName == "ASP.NET CORE")
+                {
+                    color = "post-category text-white bg-primary mb-3";
+                }
+                if (item.Category.CategoryName == "ASP.NET CORE WEBAPI")
+                {
+                    color = "post-category text-white bg-info mb-3";
+                }
+                if (item.Category.CategoryName == "ASP.NET CORE MVC")
+                {
+                    color = "post-category text-white bg-danger mb-3";
+                }
+                if (item.Category.CategoryName == "HTML")
+                {
+                    color = "post-category text-white bg-secondary mb-3";
+                }
+                if (item.Category.CategoryName == "CSS")
+                {
+                    color = "post-category text-white bg-dark mb-3";
+                }
+
+
+
+                if (item.Category.CategoryName == "ANGULAR")
+                {
+                    color = "post-category text-white bg-danger mb-3";
+                }
+                if (item.Category.CategoryName == "REACT.JS")
+                {
+                    color = "post-category text-white bg-secondary mb-3";
+                }
+                if (item.Category.CategoryName == "VUE.JS")
+                {
+                    color = "post-category text-white bg-dark mb-3";
+                }
+
+
+                <div class="col-lg-4 mb-4">
+                    <div class="entry2">
+                        <a href="/Blog/BlogDetails/@item.BlogID"><img src="@item.BlogImage" style="height:250px;" alt="Image" class="img-fluid rounded"></a>
+                        <div class="excerpt">
+                            <span class="@color">@item.Category.CategoryName</span>
+                            <h2><a href="/Blog/BlogDetails/@item.BlogID">@item.BlogTitle</a></h2>
+                            <div class="post-meta align-items-center text-left clearfix">
+                                <figure class="author-figure mb-0 mr-3 float-left"><img src="@item.Author.AuthorImage" alt="Image" class="img-fluid"></figure>
+                                <span class="d-inline-block mt-1"><a href="#">@item.Author.AuthorName</a></span>
+                                <span style="color:chocolate">&nbsp;-&nbsp; @(((DateTime)item.BlogDate).ToString("dd/MMM/yyyy"))</span>
+                                -
+                                <i style="color:forestgreen" class="fa fa-hands-wash"></i> @item.BlogRaiting
+                            </div>
+                            <p>
+                                @if (item != null && !string.IsNullOrEmpty(item.BlogContent))
+                                {
+                                    @item.BlogContent.Substring(0, item.BlogContent.Substring(0, 200).LastIndexOf(" "))
+                                }
+
+                            </p>
+                            <p><a href="/Blog/BlogDetails/@item.BlogID">Devamını Oku</a></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+

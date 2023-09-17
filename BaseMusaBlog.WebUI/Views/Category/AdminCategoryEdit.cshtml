@@ -1,0 +1,32 @@
+﻿@model BaseMusaBlog.EntityLayer.Concrete.Category
+@{
+    ViewBag.Title = "AdminCategoryEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Kategori Güncelle</h3>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Yazar ID")
+    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori Adı ")
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori Açıklaması ")
+    @Html.TextAreaFor(x => x.CategoryDescription,5,3, new { @class = "form-control" })
+    <br />   
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+
+
+

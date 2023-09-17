@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BaseMusaBlog.EntityLayer.Concrete.About>
+
+<div class="site-footer">
+    <div class="container">
+        <div class="row mb-5">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <h3 style="color: indianred" class="footer-heading mb-4">Hakkımızda</h3>
+                    <p>
+                        @{
+                            string blogContent = item.AboutContent1;
+                            int maxLength = Math.Min(blogContent.Length, 250);
+                            int lastSpaceIndex = blogContent.LastIndexOf(" ", maxLength);
+                            string result = lastSpaceIndex >= 0 ? blogContent.Substring(0, lastSpaceIndex) : blogContent.Substring(0, maxLength);
+                            @result
+                        }
+                        ...
+                    </p>
+                    <a style="color: indianred" class="nav-link" href="/About/Index/">Devamını Oku</a>
+                </div>
+            }
+            <div class="col-md-3 ml-auto">
+                <ul class="list-unstyled float-left mr-5">
+                    <li><a href="/Blog/Index/">Ana Sayfa</a></li>
+                    <li><a href="/About/Index/">Hakkımızda</a></li>
+                    <li><a href="/Contact/SendMessage/">İletişim</a></li>
+                    <li><a href="/Login/AuthorLogin/">Yazar Girişi</a></li>
+                </ul>
+                <ul class="list-unstyled float-left">
+                    <li><a href="/Blog/BlogByCategory/1/">C#</a></li>
+                    <li><a href="/Blog/BlogByCategory/2/">JAVASCRIPT</a></li>
+                    <li><a href="/Blog/BlogByCategory/3/">ASP.NET CORE</a></li>
+                    <li><a href="/Blog/BlogByCategory/4/">ASP.NET CORE WEBAPI</a></li>
+                    <li><a href="/Blog/BlogByCategory/5/">ASP.NET CORE Mvc</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <h3 style="color:indianred" class="footer-heading mb-4">Sosyal medya hesaplarımız</h3>
+                    <p>
+                        <a href="/Contact/SendMessage/"><span class="icon-facebook pt-2 pr-2 pb-2 pl-0"></span></a>
+                        <a href="/Contact/SendMessage/"><span class="icon-twitter p-2"></span></a>
+                        <a href="/Contact/SendMessage/"><span class="icon-instagram p-2"></span></a>
+                        <a href="/Contact/SendMessage/"><span class="icon-rss p-2"></span></a>
+                        <a href="/Contact/SendMessage/"><span class="icon-envelope p-2"></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p>
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> Tüm hakları saklıdır | Bu proje teması <i class="icon-heart text-danger" aria-hidden="true"></i><a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E&source=header" target="_blank">MyGithup</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

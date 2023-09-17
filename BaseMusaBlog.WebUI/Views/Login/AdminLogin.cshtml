@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Giriş Paneli</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="~/AuthorLoginTemplate/image/png" href="~/AuthorLoginTemplate/images/icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/AuthorLoginTemplate/css/main.css">
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('~/AuthorLoginTemplate/images/bg-01.jpg');">
+            <div class="wrap-login100">
+                @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+                {
+                    <span class="login100-form-logo">
+                        <img style="width:100px;height:100px" src="~/miniblog/images/logo1.png" />
+                    </span>
+                    <span class="login100-form-title p-b-34 p-t-27">
+                        Blog Admin Girişi
+                    </span>
+                    <div class="wrap-input100 validate-input" data-validate="Enter username">
+                        <input class="input100" type="text" name="UserName" placeholder="Email Adresiniz">
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <input class="input100" type="password" name="Password" placeholder="Şifreniz">
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn">
+                            Giriş Yap
+                        </button>
+                    </div>
+                    <div class="text-center p-t-90">
+                        <a class="txt1" href="#">
+                            Şifremi Unuttum?
+                        </a>
+                        <br />
+                        <br />
+                        <a style="color:darkblue" class="txt1" href="/Login/AuthorLogin/">
+                            Yazar Girişi
+                        </a>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="footer">
+                        <div class="text-center">
+                            <strong>TrueBasebLoGs | AdminLoginForm | @DateTime.Now.Year Tüm Hakları Saklıdır.</strong>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="dropDownSelect1"></div>
+    <script src="~/AuthorLoginTemplate/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/AuthorLoginTemplate/vendor/animsition/js/animsition.min.js"></script>
+    <script src="~/AuthorLoginTemplate/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/AuthorLoginTemplate/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/AuthorLoginTemplate/vendor/select2/select2.min.js"></script>
+    <script src="~/AuthorLoginTemplate/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/AuthorLoginTemplate/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="~/AuthorLoginTemplate/vendor/countdowntime/countdowntime.js"></script>
+    <script src="~/AuthorLoginTemplate/js/main.js"></script>
+</body>
+</html>

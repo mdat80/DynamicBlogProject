@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BaseMusaBlog.EntityLayer.Concrete.Category>
+@{
+    string color = "";
+}
+<div class="sidebar-box">
+    <h3 class="heading">Aktif Kategoriler</h3>
+    <ul class="categories">
+        @foreach (var item in Model)
+        {
+            //durumu true olan kategorileri listeleme
+            if (item.CategoryStatus == true)
+            {
+                <li><a href="/Blog/BlogByCategory/@item.CategoryID">@item.CategoryName<span></span></a></li>
+            }           
+        }
+    </ul>
+</div>

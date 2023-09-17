@@ -1,0 +1,132 @@
+﻿@model IEnumerable<BaseMusaBlog.EntityLayer.Concrete.Blog>
+@{
+    ViewBag.Title = "AuthorBlogList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    string color = "";
+}
+@{
+    string casename = "";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Bloglarım</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <section class="content">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Aktif Bloglarım</h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 20%">
+                                Blog Adı
+                            </th>
+                            <th style="width: 22%" class="text-center">
+                                Kategorisi
+                            </th>
+                            <th style="width: 10%">
+                                Blog Puanı(100)
+                            </th>
+                            <th style="width: 25%" class="text-center">
+                                Durumu
+                            </th>
+                            <th style="width: 20%" class="text-center">
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            //Kategori başlıklarının arka plan renkleri
+                            if (item.BlogRaiting >= 85)
+                            {
+                                color = "post-category text-white bg-success mb-3";
+                                casename = "Çok iyi";
+                            }
+                            if (item.BlogRaiting >= 70 && item.BlogRaiting <= 84)
+                            {
+                                color = "post-category text-white bg-info mb-3";
+                                casename = "İyi";
+                            }
+                            if (item.BlogRaiting >= 50 && item.BlogRaiting <= 69)
+                            {
+                                color = "post-category text-white bg-warning mb-3";
+                                casename = "Orta";
+                            }
+                            if (item.BlogRaiting >= 0 && item.BlogRaiting <= 49)
+                            {
+                                color = "post-category text-white bg-danger mb-3";
+                                casename = "Kötü";
+                            }
+                            <tr>
+                                <td>@item.BlogTitle</td>
+
+                                <td class="project-state">
+                                    <span class="badge badge-dark">@item.Category.CategoryName</span>
+                                </td>
+
+
+
+                                <td class="project-progress">
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="10"
+                                             aria-valuemin="0" aria-valuemax="10" style="width:  @item.BlogRaiting">
+                                        </div>
+                                    </div>
+
+                                    <small>Alınan Puan: @item.BlogRaiting</small>
+                                </td>
+
+                                <td class="project-state">
+                                    <span class="badge @color">@casename</span>
+                                </td>
+
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-info btn-sm" href="/Blog/UpdateBlog/@item.BlogID">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <a class="btn btn-success btn-sm" href="/Blog/AddNewBlog/">
+        <i class="fas fa-plus">
+        </i>
+        Yeni Blog
+    </a>
+</body>
+</html>
+
+
+

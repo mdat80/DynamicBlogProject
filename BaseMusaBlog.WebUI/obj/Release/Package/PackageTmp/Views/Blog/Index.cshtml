@@ -1,0 +1,16 @@
+﻿@*Blog Index*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@*Öne çıkan Bloglar*@
+@Html.Action("FeaturedPosts", "Blog")
+@*Blog Listesi*@
+@Html.Action("BlogList", "Blog")
+@*Öne çıkan  diğer Bloglar*@
+@*@Html.Action("OtherFeaturedPosts", "Blog")*@
+@*Subscribe mail*@
+@Html.Action("AddMail", "MailSubscribe")
+@*Footer-AboutController*@
+@Html.Action("Footer", "About")
+

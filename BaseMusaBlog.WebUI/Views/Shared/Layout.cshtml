@@ -1,0 +1,176 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TruebLoGs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/miniblog/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="~/miniblog/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/miniblog/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/miniblog/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/miniblog/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/miniblog/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/miniblog/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/miniblog/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="~/miniblog/css/aos.css">
+    <link rel="stylesheet" href="~/miniblog/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="site-wrap">
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <header class="site-navbar" role="banner">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+
+                    <div class="col-12 search-form-wrap js-search-form">
+                        <form method="get" action="#">
+                            <input type="text" id="s" class="form-control" placeholder="Search...">
+                            <button class="search-btn" type="submit"><span class="icon-search"></span></button>
+                        </form>
+                    </div>
+                    <div class="col-1 site-logo">
+                        <a href="/Blog/Index/" class="text-black h2 mb-0">
+                            <h4 style="color:mediumvioletred; text-align: center;height:30px; margin:0px; padding:0px;
+                                border-radius: 5px; width: 100px; height: 60px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold' , sans-serif">
+                                <img src="~/miniblog/images/musa-logo.png" style="width:60px; height:40px; margin:0px; padding:0px" />
+                                TruebLoGs
+                            </h4>
+                        </a>
+                    </div>
+                    <div class="col-10 text-right">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                            <a class="navbar-brand" href="/Blog/Index/">
+                                <i class="fas fa-home" style="color: blue;"></i> Ana Sayfa
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/About/Index/">
+                                            <i class="fas fa-info-circle" style="color: orange;"></i> Hakkımızda <span class="sr-only">(current)</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/Contact/SendMessage/">
+                                            <i class="fas fa-envelope" style="color: green; "></i> İletişim
+                                        </a>
+                                    </li>
+                                    <li class="nav-item active dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-blog" style="color: purple;"></i> Bloglar
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/2/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color: blue;"></i> C#
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/3/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color: red;"></i> Javascript
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/4/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color: yellow;"></i> Asp.Net Core
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/5/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color: green;"></i> Asp.Net Core WebApi
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/7/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color: purple;"></i> Asp.Net Core Mvc
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/9/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color: mediumspringgreen;"></i> Html
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/10/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color:deeppink;"></i> Css
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/12/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color:black;"></i> Angular
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/14/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color:black;"></i> React.js
+                                                </span>
+                                            </a>
+
+                                            <a class="dropdown-item" href="/Blog/BlogByCategory/15/">
+                                                <span style="font-family: 'Pacifico', cursive; font-size: 16px;">
+                                                    <i class="fas fa-code" style="color:black;"></i> Vue.js
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- Sağa yaslanmış bağlantılar -->
+                                <ul class="navbar-nav">
+                                    <li style="font-family:'Pacifico', cursive;" class="nav-item active">
+                                        <a class="nav-link" href="/Login/AdminLogin/">
+                                            <i class="fas fa-user-shield" style="color: red;"></i> Admin Girişi
+                                        </a>
+                                    </li>
+                                    <li style="font-family:'Pacifico', cursive;" class="nav-item active">
+                                        <a class="nav-link" href="/Login/AuthorLogin/">
+                                            <i class="fas fa-user" style="color: green;"></i> Yazar Girişi
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+    </div>
+    <script src="~/miniblog/js/jquery-3.3.1.min.js"></script>
+    <script src="~/miniblog/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/miniblog/js/jquery-ui.js"></script>
+    <script src="~/miniblog/js/popper.min.js"></script>
+    <script src="~/miniblog/js/bootstrap.min.js"></script>
+    <script src="~/miniblog/js/owl.carousel.min.js"></script>
+    <script src="~/miniblog/js/jquery.stellar.min.js"></script>
+    <script src="~/miniblog/js/jquery.countdown.min.js"></script>
+    <script src="~/miniblog/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/miniblog/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/miniblog/js/aos.js"></script>
+    <script src="~/miniblog/js/main.js"></script>
+</body>
+</html>
+
+
